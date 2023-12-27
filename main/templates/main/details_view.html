@@ -1,0 +1,23 @@
+{% extends 'main/base.html'%}
+
+{% block title %}
+Клиент №{{ client.id }}
+{% endblock %}
+
+{% block content %}
+    <div class="alert alert-warning mt-2">
+        <h3>{{ client.FIO }}</h3>
+        <p>Адрес: {{ client.address }}</p>
+        <p>Номер телефона: {{ client.number_phone }}</p>
+        <p>Email: {{ client.email }}</p>
+        <p>Пол: {{ client.gender }}</p>
+        <p>Статус полиса: {{ client.policyStatus }}</p>
+        <p>Тип страхования: {{ client.insuranceType }}</p>
+        <p>Сумма страхования: {{ client.insuranceAmount }}</p>
+        <p>Дата начала страхования: {{ client.startDate }}</p>
+        <p>Дата окончания страхования: {{ client.endDate }}</p>
+        <p>Выплата клиента за страхование: {{ client.premium }}</p>
+        <a href="{% url 'client-delete' client.id %}" class="btn btn-danger">Удалить</a>
+        <a href="{% url 'client-update' client.id %}" class="btn btn-info">Редактировать</a>
+    </div>
+{% endblock %}

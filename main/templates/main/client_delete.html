@@ -1,0 +1,26 @@
+{% extends 'main/base.html'%}
+
+{% block title %}
+Удаление клиента
+{% endblock %}
+
+{% block content %}
+    <h1>Удаление клиента</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.FIO }}<br>
+        {{ form.address }}<br>
+        {{ form.number_phone }}<br>
+        {{ form.email }}<br>
+        {{ form.gender }}<br>
+        {{ form.policyStatus }}<br>
+        {{ form.insuranceType }}<br>
+        {{ form.insuranceAmount }}<br>
+        {{ form.startDate }}<br>
+        {{ form.endDate }}<br>
+        {{ form.premium }}<br>
+        <button type="submit" class="btn btn-success">Удалить</button>
+        <span>{{ error }}</span>
+    </form>
+
+{% endblock %}
